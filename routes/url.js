@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const validUrl = require("valid-url");
-const shortid = require("shortid");
-const dotenv = require("dotenv").config();
+const shortId = require("shortid");
+require("dotenv").config();
 
 const Url = require("../models/Url");
 
@@ -19,7 +19,7 @@ router.post("/shorten", async (req, res) => {
   if (!validUrl.isUri(baseUrl)) res.status(401).json("Invalid baseUrl");
 
   // Create url code
-  const urlCode = shortid.generate();
+  const urlCode = shortId.generate();
   // Check longUrl
   if (!validUrl.isUri(longUrl)) {
     res.status(401).json("Invalid longUrl");
