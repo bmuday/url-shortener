@@ -34,7 +34,6 @@ router.post("/shorten", async (req, res) => {
           urlCode,
           longUrl,
           shortUrl,
-          date: new Date(),
         });
 
         await newUrl.save();

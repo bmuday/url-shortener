@@ -11,10 +11,10 @@ const connectDB = require("./db");
 connectDB();
 
 // Define Routes
-const rootApi = require("./routes/index");
-app.use("/", rootApi);
-const url = require("./routes/url");
-app.use("/api/url", url);
+const redirect = require("./routes/redirect");
+app.use("/", redirect);
+const newUrl = require("./routes/url");
+app.use("/api/url", newUrl);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}...`);

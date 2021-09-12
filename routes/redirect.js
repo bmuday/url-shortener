@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Url = require("../models/Url");
 
+// Redirection vers l'url d'origine
 router.get("/:code", async (req, res) => {
   try {
     const url = await Url.findOne({ urlCode: req.params.code });
